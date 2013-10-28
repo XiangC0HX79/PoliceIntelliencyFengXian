@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:NavigatorContent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					xmlns:s="library://ns.adobe.com/flex/spark" 
+					xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<s:DateTimeFormatter id="df" dateTimePattern="yyyy-MM-dd HH:mm:ss"/>
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import app.model.vo.IntelligencyVO;
+			
+			[Bindable]public var intelligency:IntelligencyVO;
+		]]>
+	</fx:Script>
+	<s:VGroup id="groupInfo" gap="5" width="400">
+		<s:SkinnableContainer width="100%" backgroundColor="0xEEEEEE">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle"/>
+			</s:layout>
+			<s:Label text="时　　间：" fontWeight="bold"/>
+			<s:Label text="{df.format(intelligency.bjsj)}" width="100%"/>
+			<s:Label text="处警事由：" fontWeight="bold"/>
+			<s:Label text="{intelligency.jqlb}" width="100%"/>
+		</s:SkinnableContainer>		
+		
+		<s:HGroup verticalAlign="middle" width="100%">
+			<s:Label text="地　　址：" fontWeight="bold"/>
+			<s:Label text="{intelligency.bjdz}"/>
+		</s:HGroup>	
+		
+		<s:SkinnableContainer width="100%" backgroundColor="0xEEEEEE">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle"/>
+			</s:layout>
+			<s:Label text="受理人：" fontWeight="bold" trackingLeft="4"/>
+			<s:Label text="{intelligency.cjr}" width="100%"/>
+			<s:Label text="受理单位：" fontWeight="bold"/>
+			<s:Label text="{intelligency.ssxq}" width="100%"/>
+		</s:SkinnableContainer>	
+			
+		<s:HGroup width="100%">
+			<s:Label text="警情内容：" fontWeight="bold"/>
+			<s:Label text="{intelligency.jqnr}" width="100%" lineBreak="toFit"/>
+		</s:HGroup>		
+	</s:VGroup>
+</s:NavigatorContent>

@@ -1,0 +1,1943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSysConfig">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSysConfigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSysConfigResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSysDic">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSysDicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSysDicResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDepartmentInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDepartmentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDepartmentInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlarmInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beginTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlarmInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlarmInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlarmTypeInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAlarmTypeInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlarmTypeInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlarmPolice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="alarmID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlarmPoliceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlarmPoliceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCallInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="policeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCallInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCallInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getServiceDic">
+        <s:complexType />
+      </s:element>
+      <s:element name="getServiceDicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getServiceDicResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGPSRealTimeInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GPSID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGPSRealTimeInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getGPSRealTimeInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getServiceStatic">
+        <s:complexType />
+      </s:element>
+      <s:element name="getServiceStaticResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getServiceStaticResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGPSListTrackHis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beginTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGPSListTrackHisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getGPSListTrackHisResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGPSTrackLineBack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beginTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGPSTrackLineBackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getGPSTrackLineBackResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGPSTrackHis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gpssimcard" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beginTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGPSTrackHisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getGPSTrackHisResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatrolZone">
+        <s:complexType />
+      </s:element>
+      <s:element name="getPatrolZoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPatrolZoneResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatrolPoint">
+        <s:complexType />
+      </s:element>
+      <s:element name="getPatrolPointResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPatrolPointResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPoliceCrossing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="interval" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPoliceCrossingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPoliceCrossingResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="policeID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAuthResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCallInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="isresponse" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="isconfirm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="frequency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jyname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jyid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userdepname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userdepid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="note" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCallInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setCallInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setServiceState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stateid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statenm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jyid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusdes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gpsTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setServiceStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setServiceStateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAlarmFocus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JQID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ISMUST" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAlarmFocusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setAlarmFocusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAlarmPolice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JQID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JYID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAlarmPoliceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setAlarmPoliceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAlarmPolice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JQID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JYID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAlarmPoliceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAlarmPoliceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAlarmPoliceType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JQID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JYID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pTYPE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAlarmPoliceTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setAlarmPoliceTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAlarmPos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JQID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="X" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Y" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAlarmPosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setAlarmPosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCrossRoad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="road" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCrossRoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCrossRoadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCrossPoint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="road1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="road2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCrossPointResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCrossPointResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addressLocator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="adddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addressLocatorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addressLocatorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getExceptService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getExceptServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getExceptServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWarningArea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWarningAreaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getWarningAreaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNewTask">
+        <s:complexType />
+      </s:element>
+      <s:element name="getNewTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNewTaskResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNewTaskPolice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="taskID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNewTaskPoliceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNewTaskPoliceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ErrorRoad">
+        <s:complexType />
+      </s:element>
+      <s:element name="ErrorRoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorRoadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlarmInfoFX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="typeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beginTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlarmInfoFXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlarmInfoFXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlarmTypeInfoFX">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAlarmTypeInfoFXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlarmTypeInfoFXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBaseSTIDDMG">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBaseSTIDDMGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBaseSTIDDMGResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAlarmNewType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JQID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NEWJQLB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAlarmNewTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setAlarmNewTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getElePolice">
+        <s:complexType />
+      </s:element>
+      <s:element name="getElePoliceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getElePoliceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCallInfo_Today">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCallInfo_TodayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCallInfo_TodayResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCallInfoPT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="isresponse" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="isconfirm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="frequency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jyname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jyid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userdepname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userdepid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="note" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kind" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="position" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trueKind" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="truePosition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCallInfoPTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setCallInfoPTResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSysConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:getSysConfig" />
+  </wsdl:message>
+  <wsdl:message name="getSysConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:getSysConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSysDicSoapIn">
+    <wsdl:part name="parameters" element="tns:getSysDic" />
+  </wsdl:message>
+  <wsdl:message name="getSysDicSoapOut">
+    <wsdl:part name="parameters" element="tns:getSysDicResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDepartmentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getDepartmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="getDepartmentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getDepartmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getAlarmInfo" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getAlarmInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmTypeInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getAlarmTypeInfo" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmTypeInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getAlarmTypeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmPoliceSoapIn">
+    <wsdl:part name="parameters" element="tns:getAlarmPolice" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmPoliceSoapOut">
+    <wsdl:part name="parameters" element="tns:getAlarmPoliceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCallInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getCallInfo" />
+  </wsdl:message>
+  <wsdl:message name="getCallInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getCallInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiceDicSoapIn">
+    <wsdl:part name="parameters" element="tns:getServiceDic" />
+  </wsdl:message>
+  <wsdl:message name="getServiceDicSoapOut">
+    <wsdl:part name="parameters" element="tns:getServiceDicResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGPSRealTimeInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getGPSRealTimeInfo" />
+  </wsdl:message>
+  <wsdl:message name="getGPSRealTimeInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getGPSRealTimeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiceStaticSoapIn">
+    <wsdl:part name="parameters" element="tns:getServiceStatic" />
+  </wsdl:message>
+  <wsdl:message name="getServiceStaticSoapOut">
+    <wsdl:part name="parameters" element="tns:getServiceStaticResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGPSListTrackHisSoapIn">
+    <wsdl:part name="parameters" element="tns:getGPSListTrackHis" />
+  </wsdl:message>
+  <wsdl:message name="getGPSListTrackHisSoapOut">
+    <wsdl:part name="parameters" element="tns:getGPSListTrackHisResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGPSTrackLineBackSoapIn">
+    <wsdl:part name="parameters" element="tns:getGPSTrackLineBack" />
+  </wsdl:message>
+  <wsdl:message name="getGPSTrackLineBackSoapOut">
+    <wsdl:part name="parameters" element="tns:getGPSTrackLineBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGPSTrackHisSoapIn">
+    <wsdl:part name="parameters" element="tns:getGPSTrackHis" />
+  </wsdl:message>
+  <wsdl:message name="getGPSTrackHisSoapOut">
+    <wsdl:part name="parameters" element="tns:getGPSTrackHisResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPatrolZoneSoapIn">
+    <wsdl:part name="parameters" element="tns:getPatrolZone" />
+  </wsdl:message>
+  <wsdl:message name="getPatrolZoneSoapOut">
+    <wsdl:part name="parameters" element="tns:getPatrolZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPatrolPointSoapIn">
+    <wsdl:part name="parameters" element="tns:getPatrolPoint" />
+  </wsdl:message>
+  <wsdl:message name="getPatrolPointSoapOut">
+    <wsdl:part name="parameters" element="tns:getPatrolPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPoliceCrossingSoapIn">
+    <wsdl:part name="parameters" element="tns:getPoliceCrossing" />
+  </wsdl:message>
+  <wsdl:message name="getPoliceCrossingSoapOut">
+    <wsdl:part name="parameters" element="tns:getPoliceCrossingResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:getAuth" />
+  </wsdl:message>
+  <wsdl:message name="getAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:getAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="setCallInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:setCallInfo" />
+  </wsdl:message>
+  <wsdl:message name="setCallInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:setCallInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="setServiceStateSoapIn">
+    <wsdl:part name="parameters" element="tns:setServiceState" />
+  </wsdl:message>
+  <wsdl:message name="setServiceStateSoapOut">
+    <wsdl:part name="parameters" element="tns:setServiceStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmFocusSoapIn">
+    <wsdl:part name="parameters" element="tns:setAlarmFocus" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmFocusSoapOut">
+    <wsdl:part name="parameters" element="tns:setAlarmFocusResponse" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmPoliceSoapIn">
+    <wsdl:part name="parameters" element="tns:setAlarmPolice" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmPoliceSoapOut">
+    <wsdl:part name="parameters" element="tns:setAlarmPoliceResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAlarmPoliceSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAlarmPolice" />
+  </wsdl:message>
+  <wsdl:message name="deleteAlarmPoliceSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAlarmPoliceResponse" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmPoliceTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:setAlarmPoliceType" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmPoliceTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:setAlarmPoliceTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmPosSoapIn">
+    <wsdl:part name="parameters" element="tns:setAlarmPos" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmPosSoapOut">
+    <wsdl:part name="parameters" element="tns:setAlarmPosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCrossRoadSoapIn">
+    <wsdl:part name="parameters" element="tns:getCrossRoad" />
+  </wsdl:message>
+  <wsdl:message name="getCrossRoadSoapOut">
+    <wsdl:part name="parameters" element="tns:getCrossRoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCrossPointSoapIn">
+    <wsdl:part name="parameters" element="tns:getCrossPoint" />
+  </wsdl:message>
+  <wsdl:message name="getCrossPointSoapOut">
+    <wsdl:part name="parameters" element="tns:getCrossPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="addressLocatorSoapIn">
+    <wsdl:part name="parameters" element="tns:addressLocator" />
+  </wsdl:message>
+  <wsdl:message name="addressLocatorSoapOut">
+    <wsdl:part name="parameters" element="tns:addressLocatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getExceptServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:getExceptService" />
+  </wsdl:message>
+  <wsdl:message name="getExceptServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:getExceptServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWarningAreaSoapIn">
+    <wsdl:part name="parameters" element="tns:getWarningArea" />
+  </wsdl:message>
+  <wsdl:message name="getWarningAreaSoapOut">
+    <wsdl:part name="parameters" element="tns:getWarningAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNewTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:getNewTask" />
+  </wsdl:message>
+  <wsdl:message name="getNewTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:getNewTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNewTaskPoliceSoapIn">
+    <wsdl:part name="parameters" element="tns:getNewTaskPolice" />
+  </wsdl:message>
+  <wsdl:message name="getNewTaskPoliceSoapOut">
+    <wsdl:part name="parameters" element="tns:getNewTaskPoliceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ErrorRoadSoapIn">
+    <wsdl:part name="parameters" element="tns:ErrorRoad" />
+  </wsdl:message>
+  <wsdl:message name="ErrorRoadSoapOut">
+    <wsdl:part name="parameters" element="tns:ErrorRoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmInfoFXSoapIn">
+    <wsdl:part name="parameters" element="tns:getAlarmInfoFX" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmInfoFXSoapOut">
+    <wsdl:part name="parameters" element="tns:getAlarmInfoFXResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmTypeInfoFXSoapIn">
+    <wsdl:part name="parameters" element="tns:getAlarmTypeInfoFX" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmTypeInfoFXSoapOut">
+    <wsdl:part name="parameters" element="tns:getAlarmTypeInfoFXResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBaseSTIDDMGSoapIn">
+    <wsdl:part name="parameters" element="tns:getBaseSTIDDMG" />
+  </wsdl:message>
+  <wsdl:message name="getBaseSTIDDMGSoapOut">
+    <wsdl:part name="parameters" element="tns:getBaseSTIDDMGResponse" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmNewTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:setAlarmNewType" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmNewTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:setAlarmNewTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getElePoliceSoapIn">
+    <wsdl:part name="parameters" element="tns:getElePolice" />
+  </wsdl:message>
+  <wsdl:message name="getElePoliceSoapOut">
+    <wsdl:part name="parameters" element="tns:getElePoliceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCallInfo_TodaySoapIn">
+    <wsdl:part name="parameters" element="tns:getCallInfo_Today" />
+  </wsdl:message>
+  <wsdl:message name="getCallInfo_TodaySoapOut">
+    <wsdl:part name="parameters" element="tns:getCallInfo_TodayResponse" />
+  </wsdl:message>
+  <wsdl:message name="setCallInfoPTSoapIn">
+    <wsdl:part name="parameters" element="tns:setCallInfoPT" />
+  </wsdl:message>
+  <wsdl:message name="setCallInfoPTSoapOut">
+    <wsdl:part name="parameters" element="tns:setCallInfoPTResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSysConfig">
+      <wsdl:input message="tns:getSysConfigSoapIn" />
+      <wsdl:output message="tns:getSysConfigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSysDic">
+      <wsdl:input message="tns:getSysDicSoapIn" />
+      <wsdl:output message="tns:getSysDicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDepartmentInfo">
+      <wsdl:input message="tns:getDepartmentInfoSoapIn" />
+      <wsdl:output message="tns:getDepartmentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmInfo">
+      <wsdl:input message="tns:getAlarmInfoSoapIn" />
+      <wsdl:output message="tns:getAlarmInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmTypeInfo">
+      <wsdl:input message="tns:getAlarmTypeInfoSoapIn" />
+      <wsdl:output message="tns:getAlarmTypeInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmPolice">
+      <wsdl:input message="tns:getAlarmPoliceSoapIn" />
+      <wsdl:output message="tns:getAlarmPoliceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCallInfo">
+      <wsdl:input message="tns:getCallInfoSoapIn" />
+      <wsdl:output message="tns:getCallInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceDic">
+      <wsdl:input message="tns:getServiceDicSoapIn" />
+      <wsdl:output message="tns:getServiceDicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGPSRealTimeInfo">
+      <wsdl:input message="tns:getGPSRealTimeInfoSoapIn" />
+      <wsdl:output message="tns:getGPSRealTimeInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceStatic">
+      <wsdl:input message="tns:getServiceStaticSoapIn" />
+      <wsdl:output message="tns:getServiceStaticSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGPSListTrackHis">
+      <wsdl:input message="tns:getGPSListTrackHisSoapIn" />
+      <wsdl:output message="tns:getGPSListTrackHisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGPSTrackLineBack">
+      <wsdl:input message="tns:getGPSTrackLineBackSoapIn" />
+      <wsdl:output message="tns:getGPSTrackLineBackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGPSTrackHis">
+      <wsdl:input message="tns:getGPSTrackHisSoapIn" />
+      <wsdl:output message="tns:getGPSTrackHisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatrolZone">
+      <wsdl:input message="tns:getPatrolZoneSoapIn" />
+      <wsdl:output message="tns:getPatrolZoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatrolPoint">
+      <wsdl:input message="tns:getPatrolPointSoapIn" />
+      <wsdl:output message="tns:getPatrolPointSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPoliceCrossing">
+      <wsdl:input message="tns:getPoliceCrossingSoapIn" />
+      <wsdl:output message="tns:getPoliceCrossingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAuth">
+      <wsdl:input message="tns:getAuthSoapIn" />
+      <wsdl:output message="tns:getAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setCallInfo">
+      <wsdl:input message="tns:setCallInfoSoapIn" />
+      <wsdl:output message="tns:setCallInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setServiceState">
+      <wsdl:input message="tns:setServiceStateSoapIn" />
+      <wsdl:output message="tns:setServiceStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmFocus">
+      <wsdl:input message="tns:setAlarmFocusSoapIn" />
+      <wsdl:output message="tns:setAlarmFocusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmPolice">
+      <wsdl:input message="tns:setAlarmPoliceSoapIn" />
+      <wsdl:output message="tns:setAlarmPoliceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAlarmPolice">
+      <wsdl:input message="tns:deleteAlarmPoliceSoapIn" />
+      <wsdl:output message="tns:deleteAlarmPoliceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmPoliceType">
+      <wsdl:input message="tns:setAlarmPoliceTypeSoapIn" />
+      <wsdl:output message="tns:setAlarmPoliceTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmPos">
+      <wsdl:input message="tns:setAlarmPosSoapIn" />
+      <wsdl:output message="tns:setAlarmPosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCrossRoad">
+      <wsdl:input message="tns:getCrossRoadSoapIn" />
+      <wsdl:output message="tns:getCrossRoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCrossPoint">
+      <wsdl:input message="tns:getCrossPointSoapIn" />
+      <wsdl:output message="tns:getCrossPointSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addressLocator">
+      <wsdl:input message="tns:addressLocatorSoapIn" />
+      <wsdl:output message="tns:addressLocatorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getExceptService">
+      <wsdl:input message="tns:getExceptServiceSoapIn" />
+      <wsdl:output message="tns:getExceptServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getWarningArea">
+      <wsdl:input message="tns:getWarningAreaSoapIn" />
+      <wsdl:output message="tns:getWarningAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNewTask">
+      <wsdl:input message="tns:getNewTaskSoapIn" />
+      <wsdl:output message="tns:getNewTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNewTaskPolice">
+      <wsdl:input message="tns:getNewTaskPoliceSoapIn" />
+      <wsdl:output message="tns:getNewTaskPoliceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ErrorRoad">
+      <wsdl:input message="tns:ErrorRoadSoapIn" />
+      <wsdl:output message="tns:ErrorRoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmInfoFX">
+      <wsdl:input message="tns:getAlarmInfoFXSoapIn" />
+      <wsdl:output message="tns:getAlarmInfoFXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmTypeInfoFX">
+      <wsdl:input message="tns:getAlarmTypeInfoFXSoapIn" />
+      <wsdl:output message="tns:getAlarmTypeInfoFXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBaseSTIDDMG">
+      <wsdl:input message="tns:getBaseSTIDDMGSoapIn" />
+      <wsdl:output message="tns:getBaseSTIDDMGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmNewType">
+      <wsdl:input message="tns:setAlarmNewTypeSoapIn" />
+      <wsdl:output message="tns:setAlarmNewTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getElePolice">
+      <wsdl:input message="tns:getElePoliceSoapIn" />
+      <wsdl:output message="tns:getElePoliceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCallInfo_Today">
+      <wsdl:input message="tns:getCallInfo_TodaySoapIn" />
+      <wsdl:output message="tns:getCallInfo_TodaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setCallInfoPT">
+      <wsdl:input message="tns:setCallInfoPTSoapIn" />
+      <wsdl:output message="tns:setCallInfoPTSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSysConfig">
+      <soap:operation soapAction="http://tempuri.org/getSysConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSysDic">
+      <soap:operation soapAction="http://tempuri.org/getSysDic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepartmentInfo">
+      <soap:operation soapAction="http://tempuri.org/getDepartmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmInfo">
+      <soap:operation soapAction="http://tempuri.org/getAlarmInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmTypeInfo">
+      <soap:operation soapAction="http://tempuri.org/getAlarmTypeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmPolice">
+      <soap:operation soapAction="http://tempuri.org/getAlarmPolice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCallInfo">
+      <soap:operation soapAction="http://tempuri.org/getCallInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceDic">
+      <soap:operation soapAction="http://tempuri.org/getServiceDic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGPSRealTimeInfo">
+      <soap:operation soapAction="http://tempuri.org/getGPSRealTimeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceStatic">
+      <soap:operation soapAction="http://tempuri.org/getServiceStatic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGPSListTrackHis">
+      <soap:operation soapAction="http://tempuri.org/getGPSListTrackHis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGPSTrackLineBack">
+      <soap:operation soapAction="http://tempuri.org/getGPSTrackLineBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGPSTrackHis">
+      <soap:operation soapAction="http://tempuri.org/getGPSTrackHis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatrolZone">
+      <soap:operation soapAction="http://tempuri.org/getPatrolZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatrolPoint">
+      <soap:operation soapAction="http://tempuri.org/getPatrolPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPoliceCrossing">
+      <soap:operation soapAction="http://tempuri.org/getPoliceCrossing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuth">
+      <soap:operation soapAction="http://tempuri.org/getAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCallInfo">
+      <soap:operation soapAction="http://tempuri.org/setCallInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setServiceState">
+      <soap:operation soapAction="http://tempuri.org/setServiceState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmFocus">
+      <soap:operation soapAction="http://tempuri.org/setAlarmFocus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmPolice">
+      <soap:operation soapAction="http://tempuri.org/setAlarmPolice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAlarmPolice">
+      <soap:operation soapAction="http://tempuri.org/deleteAlarmPolice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmPoliceType">
+      <soap:operation soapAction="http://tempuri.org/setAlarmPoliceType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmPos">
+      <soap:operation soapAction="http://tempuri.org/setAlarmPos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCrossRoad">
+      <soap:operation soapAction="http://tempuri.org/getCrossRoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCrossPoint">
+      <soap:operation soapAction="http://tempuri.org/getCrossPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addressLocator">
+      <soap:operation soapAction="http://tempuri.org/addressLocator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExceptService">
+      <soap:operation soapAction="http://tempuri.org/getExceptService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarningArea">
+      <soap:operation soapAction="http://tempuri.org/getWarningArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewTask">
+      <soap:operation soapAction="http://tempuri.org/getNewTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewTaskPolice">
+      <soap:operation soapAction="http://tempuri.org/getNewTaskPolice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorRoad">
+      <soap:operation soapAction="http://tempuri.org/ErrorRoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmInfoFX">
+      <soap:operation soapAction="http://tempuri.org/getAlarmInfoFX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmTypeInfoFX">
+      <soap:operation soapAction="http://tempuri.org/getAlarmTypeInfoFX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBaseSTIDDMG">
+      <soap:operation soapAction="http://tempuri.org/getBaseSTIDDMG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmNewType">
+      <soap:operation soapAction="http://tempuri.org/setAlarmNewType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getElePolice">
+      <soap:operation soapAction="http://tempuri.org/getElePolice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCallInfo_Today">
+      <soap:operation soapAction="http://tempuri.org/getCallInfo_Today" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCallInfoPT">
+      <soap:operation soapAction="http://tempuri.org/setCallInfoPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSysConfig">
+      <soap12:operation soapAction="http://tempuri.org/getSysConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSysDic">
+      <soap12:operation soapAction="http://tempuri.org/getSysDic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepartmentInfo">
+      <soap12:operation soapAction="http://tempuri.org/getDepartmentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmInfo">
+      <soap12:operation soapAction="http://tempuri.org/getAlarmInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmTypeInfo">
+      <soap12:operation soapAction="http://tempuri.org/getAlarmTypeInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmPolice">
+      <soap12:operation soapAction="http://tempuri.org/getAlarmPolice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCallInfo">
+      <soap12:operation soapAction="http://tempuri.org/getCallInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceDic">
+      <soap12:operation soapAction="http://tempuri.org/getServiceDic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGPSRealTimeInfo">
+      <soap12:operation soapAction="http://tempuri.org/getGPSRealTimeInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceStatic">
+      <soap12:operation soapAction="http://tempuri.org/getServiceStatic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGPSListTrackHis">
+      <soap12:operation soapAction="http://tempuri.org/getGPSListTrackHis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGPSTrackLineBack">
+      <soap12:operation soapAction="http://tempuri.org/getGPSTrackLineBack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGPSTrackHis">
+      <soap12:operation soapAction="http://tempuri.org/getGPSTrackHis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatrolZone">
+      <soap12:operation soapAction="http://tempuri.org/getPatrolZone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatrolPoint">
+      <soap12:operation soapAction="http://tempuri.org/getPatrolPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPoliceCrossing">
+      <soap12:operation soapAction="http://tempuri.org/getPoliceCrossing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuth">
+      <soap12:operation soapAction="http://tempuri.org/getAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCallInfo">
+      <soap12:operation soapAction="http://tempuri.org/setCallInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setServiceState">
+      <soap12:operation soapAction="http://tempuri.org/setServiceState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmFocus">
+      <soap12:operation soapAction="http://tempuri.org/setAlarmFocus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmPolice">
+      <soap12:operation soapAction="http://tempuri.org/setAlarmPolice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAlarmPolice">
+      <soap12:operation soapAction="http://tempuri.org/deleteAlarmPolice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmPoliceType">
+      <soap12:operation soapAction="http://tempuri.org/setAlarmPoliceType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmPos">
+      <soap12:operation soapAction="http://tempuri.org/setAlarmPos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCrossRoad">
+      <soap12:operation soapAction="http://tempuri.org/getCrossRoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCrossPoint">
+      <soap12:operation soapAction="http://tempuri.org/getCrossPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addressLocator">
+      <soap12:operation soapAction="http://tempuri.org/addressLocator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExceptService">
+      <soap12:operation soapAction="http://tempuri.org/getExceptService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarningArea">
+      <soap12:operation soapAction="http://tempuri.org/getWarningArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewTask">
+      <soap12:operation soapAction="http://tempuri.org/getNewTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewTaskPolice">
+      <soap12:operation soapAction="http://tempuri.org/getNewTaskPolice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorRoad">
+      <soap12:operation soapAction="http://tempuri.org/ErrorRoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmInfoFX">
+      <soap12:operation soapAction="http://tempuri.org/getAlarmInfoFX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmTypeInfoFX">
+      <soap12:operation soapAction="http://tempuri.org/getAlarmTypeInfoFX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBaseSTIDDMG">
+      <soap12:operation soapAction="http://tempuri.org/getBaseSTIDDMG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarmNewType">
+      <soap12:operation soapAction="http://tempuri.org/setAlarmNewType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getElePolice">
+      <soap12:operation soapAction="http://tempuri.org/getElePolice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCallInfo_Today">
+      <soap12:operation soapAction="http://tempuri.org/getCallInfo_Today" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCallInfoPT">
+      <soap12:operation soapAction="http://tempuri.org/setCallInfoPT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://192.168.1.153/GAQW_WebServcie/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://192.168.1.153/GAQW_WebServcie/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

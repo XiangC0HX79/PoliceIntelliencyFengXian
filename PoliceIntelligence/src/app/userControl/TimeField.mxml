@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 width="60">
+	<fx:Script>
+		<![CDATA[
+			import flashx.textLayout.operations.CompositeOperation;
+			import flashx.textLayout.operations.InsertTextOperation;
+			
+			import spark.events.TextOperationEvent;
+			
+			protected function textHour_changeHandler(event:TextOperationEvent):void
+			{
+				if(event.operation is InsertTextOperation)
+				{
+					if(textHour.text.length == 2)
+					{
+						textMin.setFocus();
+					}
+				}
+				else if(event.operation is CompositeOperation)
+				{
+					
+					var operation:CompositeOperation = event.operation as CompositeOperation;
+					if(operation.operations[operation.operations.length - 1] is InsertTextOperation)
+					{
+						if(textHour.text.length == 2)
+						{
+							textMin.setFocus();
+						}
+					}
+				}
+			}
+			
+			protected function textHour_focusOutHandler(event:FocusEvent):void
+			{
+				var n:Number = Number(textHour.text);
+				if(n > 23)textHour.text = "23";
+			}
+			
+			protected function textMin_focusOutHandler(event:FocusEvent):void
+			{
+				var n:Number = Number(textMin.text);
+				if(n > 59)textMin.text = "59";
+			}
+			
+			public function get time():Number
+			{
+				var hour:Number = Number(textHour.text);
+				if(hour > 23)hour = 23;
+				
+				var min:Number = Number(textMin.text);
+				if(min > 59)min = 59;
+				
+				return (hour * 60 + min) * 60 * 1000;
+			}
+			
+			public function set formatTime(value:String):void
+			{
+				var s:Array = value.split(":");
+				
+				var hour:String = s[0];
+				var min:String = "";
+				if(s.length > 1)min = s[1];
+				
+				if(hour == "")
+				{
+					textHour.text = "";
+				}
+				else
+				{
+					var n:Number = Number(hour);
+					if(isNaN(n))
+					{
+					}
+					else if(n > 23)
+					{
+						textHour.text = "23";
+					}
+					else
+					{
+						textHour.text = hour;
+					}
+				}
+				
+				if(min == "")
+				{
+					textMin.text = "";
+				}
+				else
+				{
+					n = Number(min);
+					if(isNaN(n))
+					{
+					}
+					else if(n > 59)
+					{
+						textMin.text = "59";
+					}
+					else
+					{
+						textMin.text = min;
+					}
+				}
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<s:Rect left="0" right="0" top="0" bottom="0">
+		<s:fill>
+			<s:SolidColor color="white"/>
+		</s:fill>
+		<s:stroke>
+			<s:SolidColorStroke color="0"/>
+		</s:stroke>
+	</s:Rect>
+	
+	<s:HGroup left="2" right="2" top="2" bottom="2" verticalAlign="middle">		
+		<s:TextInput id="textHour" width="100%" height="100%" textAlign="center"
+					 borderVisible="false" maxChars="2" restrict="0-9" 
+					 change="textHour_changeHandler(event)" 
+					 focusOut="textHour_focusOutHandler(event)"/>
+		<s:Label text=":"/>
+		<s:TextInput id="textMin" width="100%" height="100%" textAlign="center"
+					 borderVisible="false" maxChars="2" restrict="0-9" 
+					 focusOut="textMin_focusOutHandler(event)"/>
+	</s:HGroup>
+</s:Group>

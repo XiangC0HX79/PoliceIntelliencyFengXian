@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="400" height="300">
+	<fx:Script>
+		<![CDATA[
+			import app.model.vo.MapDataVO;
+			
+			import mx.charts.events.ChartItemEvent;
+			
+			public static const ITME_CLICK:String = "ItemClick";
+			
+			public var mapData:MapDataVO;
+			
+			protected function columnChart_itemClickHandler(event:ChartItemEvent):void
+			{
+				mapData = event.hitData.item as MapDataVO;
+				
+				dispatchEvent(new Event(ITME_CLICK));
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<s:SolidColorStroke id="tickStroke" color="0xC2C2C2" weight="2"/>
+		<s:SolidColorStroke id="gridStroke" color="gray" alpha="0.3" weight="1"/>
+		
+		<mx:WipeRight id="wipeShow" duration="1000"/>
+	</fx:Declarations>	
+	
+	<mx:ColumnChart id="columnChart" fontSize="12" itemClick="columnChart_itemClickHandler(event)"
+				  left="20" right="40" bottom="20" top="40">
+		<mx:backgroundElements>
+			<fx:Array>						
+				<mx:GridLines gridDirection="horizontal" 
+							  horizontalStroke="{gridStroke}"/>
+			</fx:Array>
+		</mx:backgroundElements>
+		
+		<mx:verticalAxis>
+			<mx:LinearAxis id="verticalAxis"/>
+		</mx:verticalAxis>
+		
+		<mx:horizontalAxis>
+			<mx:CategoryAxis id="horizontalAxis" categoryField="area"/>
+		</mx:horizontalAxis>
+		
+		<mx:verticalAxisRenderers>					
+			<mx:AxisRenderer axis="{verticalAxis}" 
+							 axisStroke="{tickStroke}" tickStroke="{tickStroke}" 
+							 minorTickPlacement="none"/>
+		</mx:verticalAxisRenderers>
+		
+		<mx:horizontalAxisRenderers>			
+			<mx:AxisRenderer axis="{horizontalAxis}" 
+							 axisStroke="{tickStroke}" tickStroke="{tickStroke}" 
+							 minorTickPlacement="none"/>					
+		</mx:horizontalAxisRenderers>
+		
+		<mx:series>
+			<mx:ColumnSeries yField="count" xField="area" labelField="count" labelPosition="inside"
+						   showDataEffect="{wipeShow}">
+			</mx:ColumnSeries>
+		</mx:series>
+	</mx:ColumnChart>		
+</s:Group>

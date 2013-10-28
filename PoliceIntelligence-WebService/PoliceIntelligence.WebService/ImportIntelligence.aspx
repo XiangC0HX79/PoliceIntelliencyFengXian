@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ImportIntelligence.aspx.cs" Inherits="PoliceIntelligence.WebService.ImportIntelligence" %>

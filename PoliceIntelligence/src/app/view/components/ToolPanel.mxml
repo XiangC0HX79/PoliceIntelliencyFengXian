@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:HGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:userControl="app.userControl.*" 
+		 verticalAlign="middle" initialize="initCollections()">
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.XMLListCollection;
+			import mx.events.FlexEvent;
+			import mx.events.MenuEvent;
+			
+			public static const QUERY:String = "Query";
+			public static const MAP:String = "Map";
+			public static const CHART:String = "Chart";
+			
+			public static const IMPORT_ROOM:String = "ImportRoom";
+			public static const IMPORT_OTHER:String = "ImportOther";
+			
+			public static const EDIT:String = "Edit";
+			
+			[Bindable]
+			public var menuBarCollection:XMLListCollection;
+			
+			private var menubarXML:XMLList =
+				<>
+					<menuitem label="系统" data="top">
+						<menuitem label="导入">
+                            <menuitem label="入民宅偷盗"/>
+							<menuitem label="其他入室偷盗"/>
+						</menuitem>
+ 						<menuitem type="separator"/>
+						<menuitem label="编辑"/>
+					</menuitem>
+				</>;
+			
+			private function initCollections():void {
+				menuBarCollection = new XMLListCollection(menubarXML);
+			}
+			
+			protected function menuHandler(event:MenuEvent):void
+			{
+				switch(event.label)
+				{
+					case "入民宅偷盗":
+						dispatchEvent(new Event(IMPORT_ROOM));
+						break;
+					
+					case "其他入室偷盗":
+						dispatchEvent(new Event(IMPORT_OTHER));
+						break;
+					
+					case "编辑":
+						dispatchEvent(new Event(EDIT));
+						break;
+				}
+			}			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<mx:DateField id="dfStart" selectedDate="{new Date}"/>
+	<userControl:TimeField id="tfStart"/>
+	<s:Label text="-"/>	
+	<mx:DateField id="dfEnd" selectedDate="{new Date}"/>
+	<userControl:TimeField id="tfEnd"/>
+	<s:Button label="查询" buttonDown="dispatchEvent(new Event(QUERY))"/>
+	
+	<s:Button label="地图" buttonDown="dispatchEvent(new Event(MAP))"/>
+	<s:Button label="图表" buttonDown="dispatchEvent(new Event(CHART))"/>
+	
+	<mx:MenuBar labelField="@label" itemClick="menuHandler(event);" 
+				dataProvider="{menuBarCollection}"/>
+</s:HGroup>

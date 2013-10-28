@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="PoliceIntelligenceService.asmx.cs" Class="PoliceIntelligence.WebService.PoliceIntelligenceWebService" %>

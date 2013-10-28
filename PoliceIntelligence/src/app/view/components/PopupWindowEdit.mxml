@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:TitleWindow xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   width="400" height="300" title="警情地址编辑">
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<s:DateTimeFormatter id="df" dateTimePattern="yyyy-MM-dd HH:mm"/>
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.events.CloseEvent;
+			import mx.events.FlexEvent;
+			
+			import spark.events.GridEvent;
+			
+			import app.model.vo.IntelligencyVO;
+			
+			public static const FLASH:String = "flash";			
+			public static const LOCATE:String = "loacte";
+			
+			public static const SAVE:String = "save";
+			
+			[Bindable]public var dataProvider:ArrayCollection;
+			
+			[Bindable]public var selectedItem:IntelligencyVO;
+			
+			protected function datagrid_gridClickHandler(event:GridEvent):void
+			{
+				if(event.item)
+				{
+					selectedItem = event.item as IntelligencyVO;
+					dispatchEvent(new Event(FLASH));
+				}
+			}
+			
+			protected function buttonSave_buttonDownHandler(event:FlexEvent):void
+			{
+				dispatchEvent(new Event(SAVE));
+			}
+			
+			protected function dataGrid_gridDoubleClickHandler(event:GridEvent):void
+			{
+				if(event.item)
+				{
+					selectedItem = event.item as IntelligencyVO;
+					dispatchEvent(new Event(LOCATE));
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="justify"/>
+	</s:layout>
+	<s:DataGrid id="dataGrid" height="100%" verticalScrollPolicy="on" selectionMode="singleRow"
+				dataProvider="{dataProvider}" gridClick="datagrid_gridClickHandler(event)"
+				doubleClickEnabled="true" gridDoubleClick="dataGrid_gridDoubleClickHandler(event)">
+		<s:columns>
+			<s:ArrayCollection>
+				<s:GridColumn headerText="案事件编号" dataField="jqdh"/>		
+				<s:GridColumn headerText="地址" dataField="bjdz" itemRenderer="app.itemRenderer.DataGridIntelligencyItemRenderer"/>		
+				<s:GridColumn headerText="报警时间" dataField="bjsj" formatter="{df}"/>		
+				<s:GridColumn headerText="受理单位" dataField="ssxq"/>			
+			</s:ArrayCollection>
+		</s:columns>
+	</s:DataGrid>
+	<s:HGroup horizontalAlign="center">
+		<s:Button label="保存" buttonDown="buttonSave_buttonDownHandler(event)"/>
+		<s:Button label="取消" buttonDown="dispatchEvent(new CloseEvent(CloseEvent.CLOSE))"/>
+	</s:HGroup>
+</s:TitleWindow>

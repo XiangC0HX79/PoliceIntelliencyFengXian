@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esri:Map xmlns:fx="http://ns.adobe.com/mxml/2009"
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:esri="http://www.esri.com/2008/ags" 
+		  logoVisible="false" scaleBarVisible="false">
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<esri:infoWindowContent>
+		<s:BorderContainer id="infoContainer" backgroundColor="white"
+						   borderColor="0xBBBBBB"
+						   cornerRadius="5"
+						   minHeight="0"
+						   minWidth="0">
+			<s:layout>
+				<s:VerticalLayout paddingBottom="5"
+								  paddingLeft="5"
+								  paddingRight="5"
+								  paddingTop="5"/>
+			</s:layout>
+		</s:BorderContainer>
+	</esri:infoWindowContent>
+	
+	<esri:ArcGISTiledMapServiceLayer id="layerTile" url=""/>
+	
+	<esri:GraphicsLayer id="layerChart"/>
+	
+	<esri:GraphicsLayer id="layerMask"/>
+	
+	<esri:GraphicsLayer id="layerElePolice"/>	
+	
+	<esri:GraphicsLayer id="layerIntelligency"/>	
+</esri:Map>
